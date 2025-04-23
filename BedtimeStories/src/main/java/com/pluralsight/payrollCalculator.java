@@ -1,15 +1,22 @@
 package com.pluralsight;
-
+import java.util.Scanner;
 import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
 public class payrollCalculator {
 
-
-
     public static void main(String[] args) {
-        String fileName = "employees.csv"; // Make sure this file is in the project root or provide full path
+        Scanner scanner = new Scanner(System.in);
+
+        String fileName = "employees.csv";// Make sure this file is in the project root or provide full path
+        // Get the input file name from user
+        System.out.print("Enter the name of the employee input file (e.g., employees.csv): ");
+        String inputFileName = scanner.nextLine();
+
+        // Get the output file name from user
+        System.out.print("Enter the name of the payroll output file to create (e.g., payroll_report.csv): ");
+        String outputFileName = scanner.nextLine();
 
         try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
             String line;
